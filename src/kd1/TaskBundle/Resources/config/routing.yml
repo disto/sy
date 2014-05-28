@@ -1,0 +1,7 @@
+kd1_task_homepage:
+    pattern:  /Tasks
+    defaults: { _controller: kd1TaskBundle:Default:index }
+
+kd1_task_homepage:
+    pattern:  /newTask
+    defaults: { _controller: kd1TaskBundle:Default:new }

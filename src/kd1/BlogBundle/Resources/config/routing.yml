@@ -1,0 +1,10 @@
+kd1_blog_listMovies:
+    pattern:  /showMovies
+    defaults: { _controller: kd1BlogBundle:Default:showMovies }
+kd1_blog_detailsMovie:
+    pattern:  /detailsMovie
+    defaults: { _controller: kd1BlogBundle:Default:detailsMovie }
+kd1BlogBundle_movies:
+    resource: "@kd1BlogBundle/Resources/config/routing/movies.yml"
+    prefix:   /movies
+

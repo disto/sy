@@ -1,0 +1,136 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Movies</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <td>{{ entity.name }}</td>
+            </tr>
+            <tr>
+                <th>Releaseyear</th>
+                <td>{{ entity.releaseYear }}</td>
+            </tr>
+            <tr>
+                <th>Original</th>
+                <td>{{ entity.original }}</td>
+            </tr>
+            <tr>
+                <th>Label</th>
+                <td>{{ entity.label }}</td>
+            </tr>
+            <tr>
+                <th>Backuplocation</th>
+                <td>{{ entity.backupLocation }}</td>
+            </tr>
+            <tr>
+                <th>Ondisk</th>
+                <td>{{ entity.onDisk }}</td>
+            </tr>
+            <tr>
+                <th>Disklocation</th>
+                <td>{{ entity.diskLocation }}</td>
+            </tr>
+            <tr>
+                <th>Viewed</th>
+                <td>{{ entity.viewed }}</td>
+            </tr>
+            <tr>
+                <th>Incollection</th>
+                <td>{{ entity.inCollection }}</td>
+            </tr>
+            <tr>
+                <th>Burnagain</th>
+                <td>{{ entity.burnAgain }}</td>
+            </tr>
+            <tr>
+                <th>Filename</th>
+                <td>{{ entity.filename }}</td>
+            </tr>
+            <tr>
+                <th>Genre1</th>
+                <td>{{ entity.genre1 }}</td>
+            </tr>
+            <tr>
+                <th>Genre2</th>
+                <td>{{ entity.genre2 }}</td>
+            </tr>
+            <tr>
+                <th>Genre3</th>
+                <td>{{ entity.genre3 }}</td>
+            </tr>
+            <tr>
+                <th>Trailer</th>
+                <td>{{ entity.trailer }}</td>
+            </tr>
+            <tr>
+                <th>Imdbid</th>
+                <td>{{ entity.imdbid }}</td>
+            </tr>
+            <tr>
+                <th>Archiveid</th>
+                <td>{{ entity.archiveid }}</td>
+            </tr>
+            <tr>
+                <th>Storyline</th>
+                <td>{{ entity.storyline }}</td>
+            </tr>
+            <tr>
+                <th>Runtime</th>
+                <td>{{ entity.runtime }}</td>
+            </tr>
+            <tr>
+                <th>Entrydateline</th>
+                <td>{{ entity.entryDateline }}</td>
+            </tr>
+            <tr>
+                <th>Ratingimdb</th>
+                <td>{{ entity.ratingImdb }}</td>
+            </tr>
+            <tr>
+                <th>Ratingmoviemeter</th>
+                <td>{{ entity.ratingMoviemeter }}</td>
+            </tr>
+            <tr>
+                <th>Datecinema</th>
+                <td>{{ entity.dateCinema }}</td>
+            </tr>
+            <tr>
+                <th>Datedvd</th>
+                <td>{{ entity.dateDvd }}</td>
+            </tr>
+            <tr>
+                <th>Moviemeterid</th>
+                <td>{{ entity.moviemeterId }}</td>
+            </tr>
+            <tr>
+                <th>Wishlist</th>
+                <td>{{ entity.wishlist }}</td>
+            </tr>
+            <tr>
+                <th>Retrievestatus</th>
+                <td>{{ entity.retrieveStatus }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('movies') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('movies_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

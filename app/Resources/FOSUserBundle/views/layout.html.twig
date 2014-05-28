@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        {% endblock %}
+    {% endblock %}
+    <meta charset="UTF-8" />
+</head>
+<body>
+<div class="container">
+<div class="kb-login row">
+    <div>
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+            <a href="{{ path('fos_user_security_logout') }}">
+                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+            </a>
+        {% endif %}
+    </div>
+
+    {% for type, messages in app.session.flashbag.all() %}
+        {% for message in messages %}
+            <div class="flash-{{ type }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+     <div class="col-sm-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Login</div>
+                <div class"panel-body">
+                    {% block fos_user_content %}
+                    {% endblock fos_user_content %}
+                </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

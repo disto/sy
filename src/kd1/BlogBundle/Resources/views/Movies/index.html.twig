@@ -1,0 +1,93 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Movies list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Releaseyear</th>
+                <th>Original</th>
+                <th>Label</th>
+                <th>Backuplocation</th>
+                <th>Ondisk</th>
+                <th>Disklocation</th>
+                <th>Viewed</th>
+                <th>Incollection</th>
+                <th>Burnagain</th>
+                <th>Filename</th>
+                <th>Genre1</th>
+                <th>Genre2</th>
+                <th>Genre3</th>
+                <th>Trailer</th>
+                <th>Imdbid</th>
+                <th>Archiveid</th>
+                <th>Storyline</th>
+                <th>Runtime</th>
+                <th>Entrydateline</th>
+                <th>Ratingimdb</th>
+                <th>Ratingmoviemeter</th>
+                <th>Datecinema</th>
+                <th>Datedvd</th>
+                <th>Moviemeterid</th>
+                <th>Wishlist</th>
+                <th>Retrievestatus</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('movies_show', { 'id': entity.id }) }}">{{ entity.name }}</a></td>
+                <td>{{ entity.releaseYear }}</td>
+                <td>{{ entity.original }}</td>
+                <td>{{ entity.label }}</td>
+                <td>{{ entity.backupLocation }}</td>
+                <td>{{ entity.onDisk }}</td>
+                <td>{{ entity.diskLocation }}</td>
+                <td>{{ entity.viewed }}</td>
+                <td>{{ entity.inCollection }}</td>
+                <td>{{ entity.burnAgain }}</td>
+                <td>{{ entity.filename }}</td>
+                <td>{{ entity.genre1 }}</td>
+                <td>{{ entity.genre2 }}</td>
+                <td>{{ entity.genre3 }}</td>
+                <td>{{ entity.trailer }}</td>
+                <td>{{ entity.imdbid }}</td>
+                <td>{{ entity.archiveid }}</td>
+                <td>{{ entity.storyline }}</td>
+                <td>{{ entity.runtime }}</td>
+                <td>{{ entity.entryDateline }}</td>
+                <td>{{ entity.ratingImdb }}</td>
+                <td>{{ entity.ratingMoviemeter }}</td>
+                <td>{{ entity.dateCinema }}</td>
+                <td>{{ entity.dateDvd }}</td>
+                <td>{{ entity.moviemeterId }}</td>
+                <td>{{ entity.wishlist }}</td>
+                <td>{{ entity.retrieveStatus }}</td>
+                <td>{{ entity.id }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('movies_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('movies_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('movies_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

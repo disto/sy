@@ -1,0 +1,12 @@
+{% block head %}
+    <link rel="stylesheet" href="{{ asset('bundles/kd1blog/css/demo.css') }}" />
+{% endblock %}
+<div class="main-content">
+<div class="kb-dst"><h1>Movie Database</h1><h2>Movie Details</h2></div>
+<div class="kb-details">
+<h1>{{ movie.name }}</h1>
+
+<div> Year : {{ movie.releaseYear }} </div>
+<div> Imdb : {{ movie.imdbid }} </div>
+</div>
+</div>

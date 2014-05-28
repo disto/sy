@@ -1,0 +1,30 @@
+movies:
+    pattern:  /
+    defaults: { _controller: "kd1BlogBundle:Movies:index" }
+
+movies_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "kd1BlogBundle:Movies:show" }
+
+movies_new:
+    pattern:  /new
+    defaults: { _controller: "kd1BlogBundle:Movies:new" }
+
+movies_create:
+    pattern:  /create
+    defaults: { _controller: "kd1BlogBundle:Movies:create" }
+    requirements: { _method: post }
+
+movies_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "kd1BlogBundle:Movies:edit" }
+
+movies_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "kd1BlogBundle:Movies:update" }
+    requirements: { _method: post|put }
+
+movies_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "kd1BlogBundle:Movies:delete" }
+    requirements: { _method: post|delete }
